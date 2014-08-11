@@ -11,7 +11,7 @@ package main
 //
 import (
 	"fmt"
-	"github.com/raguay/goAlfred"
+	"github.com/linuxaged/goAlfred"
 	"os"
 )
 
