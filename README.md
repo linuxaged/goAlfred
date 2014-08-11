@@ -8,13 +8,13 @@ Installation and Usage
 You install the library with:
 
 ```.sh
-go get github.com/raguay/goAlfred     # (You might have to use sudo)
+go get github.com/linuxaged/goAlfred     # (You might have to use sudo)
 ```
 
 Any program that you want to use the library, just place this line in it:
 
 ```.go
-import "github.com/raguay/goAlfred"
+import "github.com/linuxaged/goAlfred"
 ```
 
 Functions

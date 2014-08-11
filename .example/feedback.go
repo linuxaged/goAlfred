@@ -10,8 +10,8 @@ package main
 // Import the libraries we use for this program.
 //
 import (
-	"github.com/raguay/goAlfred"
 	"fmt"
+	"github.com/raguay/goAlfred"
 	"os"
 )
 
@@ -19,33 +19,33 @@ import (
 // Function:          main
 //
 // Description:       This is the main function that is called whenever the program is
-//                           executed. 
-//                    
+//                           executed.
+//
 func main() {
-	if(len(os.Args) > 1) {
-		switch (os.Args[1]) {
-			case "1": 
-				goAlfred.AddResult("testUID1", "test argument1", "This is my title1", "test substring1", "icon.png", "yes", "", "")
-				goAlfred.AddResult("testUID2", "test argument2", "This is my title2", "test substring2", "icon.png", "yes", "", "")
-				goAlfred.AddResult("testUID3", "test argument3", "This is my title3", "test substring3", "icon.png", "yes", "", "")
-			case "2":	
-				goAlfred.AddResult("testUID2", "test argument2", "This is my title2", "test substring2", "icon.png", "yes", "", "")
-				goAlfred.AddResult("testUID1", "test argument1", "This is my title1", "test substring1", "icon.png", "yes", "", "")
-				goAlfred.AddResult("testUID3", "test argument3", "This is my title3", "test substring3", "icon.png", "yes", "", "")
-			case "3":
-				goAlfred.AddResult("testUID3", "test argument3", "This is my title3", "test substring3", "icon.png", "yes", "", "")
-				goAlfred.AddResult("testUID1", "test argument1", "This is my title1", "test substring1", "icon.png", "yes", "", "")
-				goAlfred.AddResult("testUID2", "test argument2", "This is my title2", "test substring2", "icon.png", "yes", "", "")
+	if len(os.Args) > 1 {
+		switch os.Args[1] {
+		case "1":
+			goAlfred.AddResult("testUID1", "test argument1", "This is my title1", "test substring1", "icon.png", "yes", "", "")
+			goAlfred.AddResult("testUID2", "test argument2", "This is my title2", "test substring2", "icon.png", "yes", "", "")
+			goAlfred.AddResult("testUID3", "test argument3", "This is my title3", "test substring3", "icon.png", "yes", "", "")
+		case "2":
+			goAlfred.AddResult("testUID2", "test argument2", "This is my title2", "test substring2", "icon.png", "yes", "", "")
+			goAlfred.AddResult("testUID1", "test argument1", "This is my title1", "test substring1", "icon.png", "yes", "", "")
+			goAlfred.AddResult("testUID3", "test argument3", "This is my title3", "test substring3", "icon.png", "yes", "", "")
+		case "3":
+			goAlfred.AddResult("testUID3", "test argument3", "This is my title3", "test substring3", "icon.png", "yes", "", "")
+			goAlfred.AddResult("testUID1", "test argument1", "This is my title1", "test substring1", "icon.png", "yes", "", "")
+			goAlfred.AddResult("testUID2", "test argument2", "This is my title2", "test substring2", "icon.png", "yes", "", "")
 
 		}
 	} else {
 		goAlfred.AddResult("testUID3", "test argument3", "This is my title3", "test substring3", "icon.png", "yes", "", "")
 		goAlfred.AddResult("testUID", "test argument", "This is my title", "test substring", "icon.png", "yes", "", "")
-		goAlfred.AddResult("testUID2", "test argument2", "This is my title2", "test substring2", "icon.png", "yes", "", "")		
+		goAlfred.AddResult("testUID2", "test argument2", "This is my title2", "test substring2", "icon.png", "yes", "", "")
 	}
 
 	//
-	// Print out the created XML. 
+	// Print out the created XML.
 	//
 	fmt.Print(goAlfred.ToXML())
 }

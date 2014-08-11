@@ -3,20 +3,20 @@ package main
 //
 // Program:              program.go
 //
-// Description:         This is a basic program shell for Alfred.  It is an example for creating your own. 
+// Description:         This is a basic program shell for Alfred.  It is an example for creating your own.
 //
 
 //
 // Import the libraries we use for this program.
 //
 import (
+	"fmt"
 	"github.com/raguay/goAlfred"
 	"os"
-	"fmt"
 )
 
 func main() {
-	if(len(os.Args) >1) {
+	if len(os.Args) > 1 {
 		fmt.Print("I was given: " + os.Args[1])
 	} else {
 		fmt.Print("Nothing was given.")
