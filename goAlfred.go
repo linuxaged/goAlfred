@@ -231,14 +231,14 @@ func Error() error {
 }
 
 //
-// Function:           ToXML
+// Function:          ToXML
 //
 // Description:       This function takes the result array and makes it into an
-//                            XML string for passing back to Alfred.  Possible help:
-//                            http://golang.org/pkg/encoding/xml/#example_MarshalIndent
+//                    XML string for passing back to Alfred.  Possible help:
+//                    http://golang.org/pkg/encoding/xml/#example_MarshalIndent
 //
-// Inputs:
-//                             arg          A string to base the ordering.
+// Inputs:			  arg          A string to base the ordering.
+//
 //
 func ToXML() string {
 	//
@@ -284,14 +284,14 @@ func ToXML() string {
 //                           and create an array result to be passed back to Alfred.
 //
 // Inputs:
-// 		uid 		the uid of the result, should be unique
-// 		arg 		the argument that will be passed on
-// 		title 		The title of the result item
-// 		sub 		The subtitle text for the result item
-// 		icon 		the icon to use for the result item
-// 		valid 		sets whether the result item can be actioned
-// 		auto 		the autocomplete value for the result item
-//              rtype           I have no idea what this one is used for. HELP!
+// 					uid 		the uid of the result, should be unique
+// 					arg 		the argument that will be passed on
+// 					title 		The title of the result item
+// 					sub 		The subtitle text for the result item
+// 					icon 		the icon to use for the result item
+// 					valid 		sets whether the result item can be actioned
+// 					auto 		the autocomplete value for the result item
+//              	rtype           I have no idea what this one is used for. HELP!
 //
 func AddResult(uid string, arg string, title string, sub string, icon string, valid string, auto string, rtype string) {
 	//
@@ -346,12 +346,12 @@ func AddResultsSimilar(instring string, uid string, arg string, title string, su
 }
 
 //
-// Function:           SetDefaultString
+// Function:        SetDefaultString
 //
-// Description:       This function sets a different default title
+// Description:     This function sets a different default title
 //
 // Inputs:
-// 		title 	the title to use
+// 					title 	the title to use
 //
 func SetDefaultString(title string) {
 	if currentResult == 0 {
