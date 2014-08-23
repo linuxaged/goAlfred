@@ -3,10 +3,11 @@ package main
 import (
 	"encoding/xml"
 	"fmt"
+	"github.com/linuxaged/goAlfred"
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	// "os"
+	"os"
 )
 
 type Query struct {
@@ -75,40 +76,44 @@ type youdao_fanyi struct {
 }
 
 func main() {
-	var url_yd *url.URL
-	url_yd, err := url.Parse("http://fanyi.youdao.com")
-	if err != nil {
-		panic(err.Error())
-	}
-	url_yd.Path += "/openapi.do?"
-	param := url.Values{}
-	param.Add("keyfrom", "rediffuse")
-	param.Add("key", "1698275791")
-	param.Add("type", "data")
-	param.Add("doctype", "xml")
-	param.Add("version", "1.1")
-	param.Add("q", "fuck")
-	url_yd.RawQuery = param.Encode()
-	// if len(os.Args) == 2 {
-	result, err := http.Get(url_yd.String())
-	if err != nil {
-		panic(err.Error())
-	} else {
-		defer result.Body.Close()
-		body, err := ioutil.ReadAll(result.Body)
+	if len(os.Args) == 2 {
+		var url_yd *url.URL
+		url_yd, err := url.Parse("http://fanyi.youdao.com")
+		if err != nil {
+			panic(err.Error())
+		}
+		url_yd.Path += "/openapi.do?"
+		param := url.Values{}
+		param.Add("keyfrom", "rediffuse")
+		param.Add("key", "1698275791")
+		param.Add("type", "data")
+		param.Add("doctype", "xml")
+		param.Add("version", "1.1")
+		param.Add("q", os.Args[1])
+		url_yd.RawQuery = param.Encode()
+
+		result, err := http.Get(url_yd.String())
 		if err != nil {
 			panic(err.Error())
 		} else {
-			yd_fy := youdao_fanyi{}
-			err := xml.Unmarshal(body, &yd_fy)
+			defer result.Body.Close()
+			body, err := ioutil.ReadAll(result.Body)
 			if err != nil {
 				panic(err.Error())
 			} else {
-				fmt.Println(yd_fy.Query.Data)
+				yd_fy := youdao_fanyi{}
+				err := xml.Unmarshal(body, &yd_fy)
+				if err != nil {
+					panic(err.Error())
+				} else {
+					goAlfred.AddResult("WordsBook", os.Args[1]+" : "+yd_fy.Translation.Paragraph.Data, yd_fy.Translation.Paragraph.Data, "test substring2", "icon.png", "yes", "", "")
+					fmt.Print(goAlfred.ToXML())
+				}
+				// fmt.Println(body)
 			}
-			// fmt.Println(body)
 		}
+	} else {
+		fmt.Println("./wb word")
 	}
-	// }
 
 }
