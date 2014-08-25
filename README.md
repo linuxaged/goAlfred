@@ -41,9 +41,12 @@ The accessible function calls are:
 <tr><td>goAlfred.GetXML()</td><td>This function returns the XML string that needs to be given to Alfred.</td></tr>
 </table>
 
-Examples
+Workflows
 --------
-There are two examples given: feedback.go and mytest.go. The feedback.go program shows how to take an input and return the proper XML sorting to Alfred. The mytest.go is a very simple program to run in a script to returns the input given. The test.alfredworkflow shows how to use the examples in an Alfred workflow. These are all in the examples directory.
+<table>
+<tr><td>Wordsbook</td><td>添加新单词及其中文翻译到 Evernote</td></tr>
+</table>
 
-If you think of anymore functions to include in the library, let me know or fork this library and ask for a pull request.
+
+
 
