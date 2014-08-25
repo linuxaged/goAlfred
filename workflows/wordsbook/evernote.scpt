@@ -1,5 +1,5 @@
 (* Notebook name to create these journal entries in *)
-property nb : "Daily Diary"
+property nb : "WordsBook"
 
 (* BEGIN HANDLER CALL
 
@@ -16,20 +16,20 @@ my handle_string(notetext)
 
 on handle_string(notetext)
 if notetext is not "" then
-CreateDailyEvernote(notetext)
+AddNewWordToEvernote(notetext)
 end if
 end handle_string
 *)
 on alfred_script(q)
 if q is not "" then
-CreateDailyEvernote(q)
+AddNewWordToEvernote(q)
 end if
 end alfred_script
 
 (* END HANDLER CALL *)
 
-on CreateDailyEvernote(txt)
-set t to "Daily Journal " & (do shell script "date +'%Y-%m-%d'")
+on AddNewWordToEvernote(txt)
+set t to "My New Words"
 set crlf to (ASCII character 13) & (ASCII character 10)
 set timeStr to time string of (current date)
 
@@ -57,4 +57,4 @@ tell application "System Events"
 set visible of process "Evernote" to false
 end tell
 
-end CreateDailyEvernote
+end AddNewWordToEvernote
