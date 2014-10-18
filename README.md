@@ -1,6 +1,3 @@
-goAlfred
-========
-
 Workflows
 --------
 <table>
