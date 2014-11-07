@@ -16,7 +16,7 @@ Workflows
 
 3. go build wb.go
 
-4. put wb executable file in workflow folder
+4. put `wb` executable file in workflow folder
 
 
 
